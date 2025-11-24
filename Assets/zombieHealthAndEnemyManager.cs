@@ -20,9 +20,9 @@ public class zombieHealthAndEnemyManager : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.transform == bala)
+        
+        if(other.gameObject.CompareTag("bala"))
         {
-            Debug.Log("Choqueee");
             vidaZ -= 33;
             Destroy(other.gameObject);
             if(vidaZ<=0)
