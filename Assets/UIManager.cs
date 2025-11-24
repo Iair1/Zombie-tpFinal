@@ -19,18 +19,14 @@ public class UIManager : MonoBehaviour
             Instance = this;
         }
     }
-    public void muestraAgarraPistola()
+    public void muestraAgarraPistola(bool ToF)
     {
-        cosoDeLaE.SetActive(true);
-    }
-    public void noMuestraAgarraPistola()
-    {
-        cosoDeLaE.SetActive(false);
+        cosoDeLaE.SetActive(ToF);
     }
 
     void Start()
     {
-        
+        cosoDeLaE.SetActive(false);
     }
 
     // Update is called once per frame
