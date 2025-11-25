@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class AgentScript : MonoBehaviour
 {
+    
     NavMeshAgent agent;
     public Transform[] targetsTR;
     [SerializeField] Transform currentTargetTR;
@@ -26,7 +27,8 @@ public class AgentScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+       chaseMode = false;
+       anim.SetBool("loVe", false);
     }
 
     // Update is called once per frame
@@ -38,20 +40,13 @@ public class AgentScript : MonoBehaviour
         {
             currentTargetTR = player;
 
-        }else if (agent.remainingDistance <= arrivalDistance)
+        }else 
         {
-            if (currentTarget < targetsTR.Length - 1)
-            {
-                currentTarget++;
-            }
-            else
-            {
-                currentTarget = 0;
-            }
-            if (targetsTR.Length > 0)
-            {
-                currentTargetTR = targetsTR[currentTarget];
 
+            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit))
+            {
+                Debug.Log(hit.collider.name);
+                currentTargetTR = this.transform;
             }
         }
         agent.destination = currentTargetTR.position;
