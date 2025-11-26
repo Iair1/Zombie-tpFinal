@@ -432,6 +432,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2298273758613990294, guid: 9237b9174df05744eaa8aada15fc1c6e,
+        type: 3}
+      propertyPath: m_AutoTraverseOffMeshLink
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2298273758613990294, guid: 9237b9174df05744eaa8aada15fc1c6e,
+        type: 3}
+      propertyPath: m_AutoRepath
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2298273758613990295, guid: 9237b9174df05744eaa8aada15fc1c6e,
         type: 3}
       propertyPath: m_Name
