@@ -15,6 +15,10 @@ public class AgentScript : MonoBehaviour
     [SerializeField] float distanceToPlayer;
     [SerializeField] Transform player;
     [SerializeField] bool chaseMode;
+    [SerializeField] GameObject cosoRaycast;
+    [SerializeField] int targetAmount;
+    [SerializeField] int trgtNumber;
+    [SerializeField] string nombreRecorrido;
 
     int currentTarget = 0;
 
@@ -27,8 +31,8 @@ public class AgentScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       currentTargetTR = GameObject.Find($"ZombieRecorrido{nombreRecorrido}{trgtNumber}").transform;
        chaseMode = false;
-       anim.SetBool("loVe", false);
     }
 
     // Update is called once per frame
@@ -42,12 +46,24 @@ public class AgentScript : MonoBehaviour
 
         }else 
         {
-
-            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit))
+            
+            if (((agent.nextPosition - agent.destination).x + (agent.nextPosition - agent.destination).z) == 0)
             {
-                Debug.Log(hit.collider.name);
-                currentTargetTR = this.transform;
+                trgtNumber = trgtNumber + 1;
+                trgtNumber = trgtNumber % targetAmount;
+                currentTargetTR = GameObject.Find($"ZombieRecorrido{nombreRecorrido}{trgtNumber}").transform;
+
             }
+
+            
+            if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit)){
+                if(hit.collider.transform == player)
+                {
+                    chaseMode = true;
+                    currentTargetTR=player;
+                }
+            }
+            
         }
         agent.destination = currentTargetTR.position;
         velocity = agent.velocity.magnitude;

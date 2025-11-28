@@ -1754,6 +1754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1275416784919522935}
   - component: {fileID: 1275416784910156275}
+  - component: {fileID: 1852181779642935144}
   m_Layer: 0
   m_Name: Zombie Grande
   m_TagString: Untagged
@@ -1797,6 +1798,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1852181779642935144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275416784919688087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebed7e0dc2f33144bb02373d937b5789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  a: {fileID: 0}
 --- !u!1 &2298273758613990295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,7 +1825,6 @@ GameObject:
   - component: {fileID: 2298273758613990297}
   - component: {fileID: 2298273758613990294}
   - component: {fileID: 2298273758613990301}
-  - component: {fileID: 2298273758613990303}
   m_Layer: 0
   m_Name: Zombie-Dark-RB
   m_TagString: Untagged
@@ -1907,7 +1920,7 @@ NavMeshAgent:
   m_Acceleration: 5
   avoidancePriority: 1
   m_AngularSpeed: 1000
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -1936,25 +1949,10 @@ MonoBehaviour:
   distanceToPlayer: 0
   player: {fileID: 0}
   chaseMode: 1
---- !u!114 &2298273758613990303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2298273758613990295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02b9433dbdc5f54ea397c6e2d06ff11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 10
-  agent: {fileID: 2298273758613990294}
-  anim: {fileID: 1275416784910156275}
-  rb: {fileID: 0}
-  target: {fileID: 0}
-  destroyTime: 2
-  destroyOnDeath: 0
+  cosoRaycast: {fileID: 0}
+  targetAmount: 0
+  trgtNumber: 0
+  nombreRecorrido: 
 --- !u!1 &5558513860143847080
 GameObject:
   m_ObjectHideFlags: 0

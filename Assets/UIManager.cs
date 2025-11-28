@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     [SerializeField] GameObject cosoDeLaE;
+    [SerializeField] GameObject pantallaPerdio;
+    [SerializeField] GameObject noPerdio;
+    [SerializeField] TextMeshProUGUI vidaTxt;
+    [SerializeField] bool perdio;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -23,15 +29,31 @@ public class UIManager : MonoBehaviour
     {
         cosoDeLaE.SetActive(ToF);
     }
+    public void updateVida(int vida){
+        vidaTxt.text = $"Vida: {vida}";
+    }
+    public void derrota(){
+        Time.timeScale = 0;
+        noPerdio.SetActive(false);
+        pantallaPerdio.SetActive(true);
+        perdio = true;
+    }
 
     void Start()
     {
+        Time.timeScale = 1;
         cosoDeLaE.SetActive(false);
+        noPerdio.SetActive(true);
+        pantallaPerdio.SetActive(false);
+        perdio = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Z) && perdio == true)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 }
