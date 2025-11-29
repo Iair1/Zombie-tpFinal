@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class zombie2 : MonoBehaviour
 {
+    NavMeshAgent agent;
     [SerializeField] int vidaZ;
     [SerializeField] Transform bala;
+    [SerializeField] Transform player;
+    [SerializeField] 
 
 
     private void Awake()
@@ -36,6 +40,7 @@ public class zombie2 : MonoBehaviour
             Destroy(other.gameObject);
             if(vidaZ<=0)
             {
+                victoryManager.Instance.OneLess();
                 Destroy(gameObject);
             }
         }
