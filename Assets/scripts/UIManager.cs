@@ -21,13 +21,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] int txtCantidad;
     [SerializeField] List<string> nombresTutoriales = new List<string>()
     {
-        "Bienvenido a Zombie Hunter",
-        "En este juego, deberás buscar un arma para destruir a los zombies", 
-        "Durante la primera parte, deberás eludirlos para conseguir el arma",
-        "Sin ella, no podrás avanzar a la segunda parte",
-        "Al llegar a la segunda parte, apareceran zombies que deberás destruir para ganar",
-        "Pero cuidado, estarás casi completamente a oscuras, y las balas no llegan muy lejos",
-        "¡Buena Suerte!"
+        "",
+        "", 
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
     };
     // Start is called before the first frame update
     private void Awake()
@@ -75,7 +76,7 @@ public class UIManager : MonoBehaviour
         perdio = false;
         tutorial = true;
         indiceActual = 0;
-        txtCantidad = 7;
+        txtCantidad = 8;
         texto.text = nombresTutoriales[0];
     }
     // Update is called once per frame
