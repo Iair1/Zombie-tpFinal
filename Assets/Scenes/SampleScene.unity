@@ -933,9 +933,9 @@ MonoBehaviour:
   - Bienvenido a Zombie Hunter
   - "En este juego, deber\xE1s buscar un arma para destruir a los zombies"
   - "Durante la primera parte, deber\xE1s eludirlos para conseguir el arma"
+  - "Podr\xE1s disparar con ella tocando la tecla M"
   - "Sin ella, no podr\xE1s avanzar a la segunda parte"
-  - "Pero, cuidado, una vez que te vea, el zombie te seguir\xE1 hasta que pases a
-    la segunda parte"
+  - "Pero, cuidado, una vez que te vea, el zombie te seguir\xE1 hasta pasar de parte"
   - "Al llegar a la segunda parte, apareceran zombies que deber\xE1s destruir para
     ganar"
   - "Pero cuidado, estar\xE1s casi completamente a oscuras, y las balas no llegan
